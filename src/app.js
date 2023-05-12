@@ -1,9 +1,9 @@
 const { apiGetGenericAsync } = require('./api');
+const { Repo } = require('./classes/Repo');
 
 require('dotenv').config({ path: `${process.cwd()}/.env` });
-const owner = process.env['OWNER'];
 
-const getBranchProtection = async (repo, branch) => {
+const getBranchProtection = async (owner, repo, branch) => {
 	return await apiGetGenericAsync(
 		`/repos/${owner}/${repo}/branches/${branch}/protection`
 	);
@@ -11,33 +11,31 @@ const getBranchProtection = async (repo, branch) => {
 
 const getRepos = () => {
 	const repos = process.env['REPOS'];
-	return repos.split(',');
+	return repos.split(',').sort();
 };
 
-const Repo = class {
-	// originalProtection;
+const buildIsFrozenTable = (allRepos) => {
+	const data = Object.values(allRepos).map((x) => {
+		return { repoName: x.repoName, isFrozen: x.isFrozen };
+	});
 
-	constructor(protection, repoName) {
-		this.originalProtection = protection;
-		this.repoName = repoName;
-	}
-
-	get isFrozen() {
-		return this.originalProtection.hasOwnProperty('restrictions');
-	}
+	return console.table(data);
 };
 
 const mainFunction = async () => {
-	const master = {};
+	const owner = process.env['OWNER'];
+	const branch = process.env['BRANCH'];
+
+	const allRepos = {};
 	const repos = getRepos();
 
 	for (let i = 0; i < repos.length; i++) {
-		const protection = await getBranchProtection(repos[i], 'release');
+		const protection = await getBranchProtection(owner, repos[i], branch);
 		const repo = new Repo(protection, repos[i]);
-		master[repos[i]] = repo;
+		allRepos[repos[i]] = repo;
 	}
 
-	console.log(master[repos[0]].isFrozen);
+	buildIsFrozenTable(allRepos);
 };
 
 mainFunction();

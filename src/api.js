@@ -1,4 +1,5 @@
 const fetch = require('node-fetch');
+
 require('dotenv').config({ path: `${process.cwd()}/.env` });
 
 global.fetch = fetch;
@@ -13,7 +14,6 @@ headers.set('Accept', 'application/vnd.github+json');
 
 exports.apiGetGenericAsync = async (urlSegment) => {
 	const url = `${apiBaseUrl}${urlSegment}`;
-	console.log(url);
 	const res = await fetch(url, {
 		method: this.apiMethods.GET,
 		headers,
