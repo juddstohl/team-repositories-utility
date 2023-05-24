@@ -1,7 +1,6 @@
 const { apiGetGenericAsync } = require('./api');
 const { Repo } = require('./classes/Repo');
-
-require('dotenv').config({ path: `${process.cwd()}/.env` });
+const { envVariable } = require('./common/envEnum');
 
 const getBranchProtection = async (owner, repo, branch) => {
 	return await apiGetGenericAsync(
@@ -10,7 +9,7 @@ const getBranchProtection = async (owner, repo, branch) => {
 };
 
 const getRepos = () => {
-	const repos = process.env['REPOS'];
+	const repos = envVariable.REPOS;
 	return repos.split(',').sort();
 };
 
@@ -23,8 +22,8 @@ const buildIsFrozenTable = (allRepos) => {
 };
 
 const mainFunction = async () => {
-	const owner = process.env['OWNER'];
-	const branch = process.env['BRANCH'];
+	const owner = envVariable.OWNER;
+	const branch = envVariable.BRANCH;
 
 	const allRepos = {};
 	const repos = getRepos();
