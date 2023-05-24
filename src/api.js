@@ -1,12 +1,11 @@
 const fetch = require('node-fetch');
-
-require('dotenv').config({ path: `${process.cwd()}/.env` });
+const { envVariable } = require('./common/envEnum');
 
 global.fetch = fetch;
 global.Headers = fetch.Headers;
 
-const apiBaseUrl = process.env['API_BASE_URL'];
-const bearerToken = process.env['GITHUB_PAT'];
+const apiBaseUrl = envVariable.API_BASE_URL;
+const bearerToken = envVariable.BEARER_TOKEN;
 
 const headers = new Headers();
 headers.set('Authorization', `Bearer ${bearerToken}`);
