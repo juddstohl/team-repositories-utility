@@ -19,6 +19,7 @@
 	"homepage": "https://github.com/juddstohl/team-repositories-utility#readme",
 	"dependencies": {
 		"dotenv": "^16.0.3",
+		"jest": "^29.5.0",
 		"node-fetch": "2.6.1"
 	}
 }
