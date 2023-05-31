@@ -1,40 +1,34 @@
-const { apiGetGenericAsync } = require('./api');
-const { Repo } = require('./classes/Repo');
-const { envVariable } = require('./common/envEnum');
-
-const getBranchProtection = async (owner, repo, branch) => {
-	return await apiGetGenericAsync(
-		`/repos/${owner}/${repo}/branches/${branch}/protection`
-	);
-};
-
-const getRepos = () => {
-	const repos = envVariable.REPOS;
-	return repos.split(',').sort();
-};
-
-const buildIsFrozenTable = (allRepos) => {
-	const data = Object.values(allRepos).map((x) => {
-		return { repoName: x.repoName, isFrozen: x.isFrozen };
-	});
-
-	return console.table(data);
-};
+const { getReposAndStatus } = require('./repoList');
+const { setRestriction } = require('./repoSetRetriction');
 
 const mainFunction = async () => {
-	const owner = envVariable.OWNER;
-	const branch = envVariable.BRANCH;
+	const args = require('minimist')(process.argv.slice(2), {
+		string: ['r'],
+		boolean: ['f', 't', 'l', 'd'],
+	});
 
-	const allRepos = {};
-	const repos = getRepos();
+	const { l, r, f, t } = args;
 
-	for (let i = 0; i < repos.length; i++) {
-		const protection = await getBranchProtection(owner, repos[i], branch);
-		const repo = new Repo(protection, repos[i]);
-		allRepos[repos[i]] = repo;
+	if (l) {
+		const data = await getReposAndStatus();
+		console.table(data);
+		return;
 	}
 
-	buildIsFrozenTable(allRepos);
+	if ((!f && !t) || (f && t)) {
+		console.log('-f or -t is required but not both. (freeze or thaw)');
+		return;
+	}
+
+	if (!r) {
+		console.log('-r is required.');
+		return;
+	}
+
+	let freeze = f ? true : !t;
+
+	const results = await setRestriction(r.split(','), freeze);
+	console.table(results);
 };
 
 mainFunction();
