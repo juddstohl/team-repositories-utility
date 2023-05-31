@@ -7,3 +7,8 @@ exports.envVariable = Object.freeze({
 	BEARER_TOKEN: process.env['GITHUB_PAT'],
 	OWNER: process.env['OWNER'],
 });
+
+exports.getReposArray = () => {
+	const repos = this.envVariable.REPOS;
+	return repos.split(',').sort();
+};

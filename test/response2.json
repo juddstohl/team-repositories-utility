@@ -1,14 +1,5 @@
 {
 	"url": "https://api.github.com/repos/ncino/workday-teams-autochart-tool/branches/release/protection",
-	"restrictions": {
-		"url": "https://api.github.com/repos/ncino/workday-teams-autochart-tool/branches/release/protection/restrictions",
-		"users_url": "https://api.github.com/repos/ncino/workday-teams-autochart-tool/branches/release/protection/restrictions/users",
-		"teams_url": "https://api.github.com/repos/ncino/workday-teams-autochart-tool/branches/release/protection/restrictions/teams",
-		"apps_url": "https://api.github.com/repos/ncino/workday-teams-autochart-tool/branches/release/protection/restrictions/apps",
-		"users": [],
-		"teams": [],
-		"apps": []
-	},
 	"required_pull_request_reviews": {
 		"url": "https://api.github.com/repos/ncino/workday-teams-autochart-tool/branches/release/protection/required_pull_request_reviews",
 		"dismiss_stale_reviews": false,
@@ -34,7 +25,7 @@
 		"enabled": false
 	},
 	"block_creations": {
-		"enabled": true
+		"enabled": false
 	},
 	"required_conversation_resolution": {
 		"enabled": false

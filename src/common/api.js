@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-const { envVariable } = require('./common/envEnum');
+const { envVariable } = require('./envEnum');
 
 global.fetch = fetch;
 global.Headers = fetch.Headers;
@@ -59,18 +59,3 @@ exports.apiGetGenericPromise = async (urlSegment) => {
 		headers,
 	});
 };
-
-// exports.httpResponseStatusLookup = (status) => {
-// 	const lookup = {
-// 		400: '400: already exists',
-// 		429: '429: rate limit response',
-// 		201: '201: success',
-// 		404: '404: the project is not found or the user does not have the required permissions',
-// 		401: '401: authentication credentials are incorrect or missing',
-// 		403: '403: user does not have permission to manage the project containing the component or does not have permission to administer Jira.',
-// 		204: '204: Successful',
-// 		200: '200: Successful',
-// 	};
-
-// 	return lookup[status] || status;
-// };
