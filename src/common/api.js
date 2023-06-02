@@ -12,13 +12,18 @@ headers.set('Authorization', `Bearer ${bearerToken}`);
 headers.set('Accept', 'application/vnd.github+json');
 
 exports.apiGetGenericAsync = async (urlSegment) => {
-	const url = `${apiBaseUrl}${urlSegment}`;
-	const res = await fetch(url, {
-		method: this.apiMethods.GET,
-		headers,
-	});
+	try {
+		const url = `${apiBaseUrl}${urlSegment}`;
+		const res = await fetch(url, {
+			method: this.apiMethods.GET,
+			headers,
+		});
 
-	return await res.json();
+		const data = await res.json();
+		return { status: res.status, data: data };
+	} catch (error) {
+		console.log({ method: 'apiGetGenericAsync', error: error });
+	}
 };
 
 exports.apiMethods = Object.freeze({

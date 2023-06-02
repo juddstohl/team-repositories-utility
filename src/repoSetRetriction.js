@@ -24,7 +24,14 @@ exports.setRestriction = async (repoArray, freeze) => {
 				repoArray[i],
 				branch
 			);
-			const restriction = formattedProtectionPut(protection, freeze);
+			if (protection.status === 404) {
+				results.push({
+					httpStatus: protection.status,
+					repository: repoArray[i],
+				});
+				continue;
+			}
+			const restriction = formattedProtectionPut(protection.data, freeze);
 			const res = await putRestriction(
 				owner,
 				repoArray[i],
