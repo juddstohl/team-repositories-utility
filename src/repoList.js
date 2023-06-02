@@ -19,7 +19,7 @@ exports.getReposAndStatus = async () => {
 
 	for (let i = 0; i < repos.length; i++) {
 		const protection = await getBranchProtection(owner, repos[i], branch);
-		const repo = new Repo(protection, repos[i]);
+		const repo = new Repo(protection.data, repos[i], protection.status);
 		allRepos[repos[i]] = repo;
 	}
 
