@@ -17,5 +17,5 @@ CLI Options:
 
 -f (freeze repository)  
 -t (thaw repository)  
--r (Single Repo, pass the index from list response)
+-r (Single Repo, pass the index from list response)  
 -a (All repositories in your .env file)
