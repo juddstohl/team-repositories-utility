@@ -1,6 +1,4 @@
 exports.Repo = class {
-	// originalProtection;
-
 	constructor(protection, repoName, httpStatus) {
 		this.originalProtection = protection;
 		this.repoName = repoName;
