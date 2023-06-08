@@ -1,31 +1,31 @@
 {
-	"url": "https://api.github.com/repos/ncino/force-integrations-plugin-lspus/branches/release/protection",
+	"url": "https://api.github.com/repos/owner/my-branch/branches/release/protection",
 	"required_status_checks": {
-		"url": "https://api.github.com/repos/ncino/force-integrations-plugin-lspus/branches/release/protection/required_status_checks",
+		"url": "https://api.github.com/repos/owner/my-branch/branches/release/protection/required_status_checks",
 		"strict": false,
 		"contexts": [
-			"AWS CodeBuild us-east-1 (LSPUS)",
+			"AWS CodeBuild us-east-1 (XXXX)",
 			"codeowner-verifier-workflow",
 			"Scan"
 		],
-		"contexts_url": "https://api.github.com/repos/ncino/force-integrations-plugin-lspus/branches/release/protection/required_status_checks/contexts",
+		"contexts_url": "https://api.github.com/repos/owner/my-branch/branches/release/protection/required_status_checks/contexts",
 		"checks": [
 			{
-				"context": "AWS CodeBuild us-east-1 (LSPUS)",
+				"context": "AWS CodeBuild us-east-1 (XXXX)",
 				"app_id": null
 			},
 			{
 				"context": "codeowner-verifier-workflow",
-				"app_id": 15368
+				"app_id": 11111
 			},
 			{
 				"context": "Scan",
-				"app_id": 15368
+				"app_id": 22222
 			}
 		]
 	},
 	"required_pull_request_reviews": {
-		"url": "https://api.github.com/repos/ncino/force-integrations-plugin-lspus/branches/release/protection/required_pull_request_reviews",
+		"url": "https://api.github.com/repos/owner/my-branch/branches/release/protection/required_pull_request_reviews",
 		"dismiss_stale_reviews": true,
 		"require_code_owner_reviews": false,
 		"require_last_push_approval": false,
@@ -33,42 +33,42 @@
 		"bypass_pull_request_allowances": {
 			"users": [
 				{
-					"login": "ci-ncino",
+					"login": "ci-owner",
 					"id": 23242449,
 					"node_id": "MDQ6VXNlcjIzMjQyNDQ5",
 					"avatar_url": "https://avatars.githubusercontent.com/u/23242449?v=4",
 					"gravatar_id": "",
-					"url": "https://api.github.com/users/ci-ncino",
-					"html_url": "https://github.com/ci-ncino",
-					"followers_url": "https://api.github.com/users/ci-ncino/followers",
-					"following_url": "https://api.github.com/users/ci-ncino/following{/other_user}",
-					"gists_url": "https://api.github.com/users/ci-ncino/gists{/gist_id}",
-					"starred_url": "https://api.github.com/users/ci-ncino/starred{/owner}{/repo}",
-					"subscriptions_url": "https://api.github.com/users/ci-ncino/subscriptions",
-					"organizations_url": "https://api.github.com/users/ci-ncino/orgs",
-					"repos_url": "https://api.github.com/users/ci-ncino/repos",
-					"events_url": "https://api.github.com/users/ci-ncino/events{/privacy}",
-					"received_events_url": "https://api.github.com/users/ci-ncino/received_events",
+					"url": "https://api.github.com/users/ci-owner",
+					"html_url": "https://github.com/ci-owner",
+					"followers_url": "https://api.github.com/users/ci-owner/followers",
+					"following_url": "https://api.github.com/users/ci-owner/following{/other_user}",
+					"gists_url": "https://api.github.com/users/ci-owner/gists{/gist_id}",
+					"starred_url": "https://api.github.com/users/ci-owner/starred{/owner}{/repo}",
+					"subscriptions_url": "https://api.github.com/users/ci-owner/subscriptions",
+					"organizations_url": "https://api.github.com/users/ci-owner/orgs",
+					"repos_url": "https://api.github.com/users/ci-owner/repos",
+					"events_url": "https://api.github.com/users/ci-owner/events{/privacy}",
+					"received_events_url": "https://api.github.com/users/ci-owner/received_events",
 					"type": "User",
 					"site_admin": false
 				},
 				{
-					"login": "microplane-ncino",
+					"login": "microplane-owner",
 					"id": 87193508,
 					"node_id": "MDQ6VXNlcjg3MTkzNTA4",
 					"avatar_url": "https://avatars.githubusercontent.com/u/87193508?v=4",
 					"gravatar_id": "",
-					"url": "https://api.github.com/users/microplane-ncino",
-					"html_url": "https://github.com/microplane-ncino",
-					"followers_url": "https://api.github.com/users/microplane-ncino/followers",
-					"following_url": "https://api.github.com/users/microplane-ncino/following{/other_user}",
-					"gists_url": "https://api.github.com/users/microplane-ncino/gists{/gist_id}",
-					"starred_url": "https://api.github.com/users/microplane-ncino/starred{/owner}{/repo}",
-					"subscriptions_url": "https://api.github.com/users/microplane-ncino/subscriptions",
-					"organizations_url": "https://api.github.com/users/microplane-ncino/orgs",
-					"repos_url": "https://api.github.com/users/microplane-ncino/repos",
-					"events_url": "https://api.github.com/users/microplane-ncino/events{/privacy}",
-					"received_events_url": "https://api.github.com/users/microplane-ncino/received_events",
+					"url": "https://api.github.com/users/microplane-owner",
+					"html_url": "https://github.com/microplane-owner",
+					"followers_url": "https://api.github.com/users/microplane-owner/followers",
+					"following_url": "https://api.github.com/users/microplane-owner/following{/other_user}",
+					"gists_url": "https://api.github.com/users/microplane-owner/gists{/gist_id}",
+					"starred_url": "https://api.github.com/users/microplane-owner/starred{/owner}{/repo}",
+					"subscriptions_url": "https://api.github.com/users/microplane-owner/subscriptions",
+					"organizations_url": "https://api.github.com/users/microplane-owner/orgs",
+					"repos_url": "https://api.github.com/users/microplane-owner/repos",
+					"events_url": "https://api.github.com/users/microplane-owner/events{/privacy}",
+					"received_events_url": "https://api.github.com/users/microplane-owner/received_events",
 					"type": "User",
 					"site_admin": false
 				},
@@ -98,11 +98,11 @@
 		}
 	},
 	"required_signatures": {
-		"url": "https://api.github.com/repos/ncino/force-integrations-plugin-lspus/branches/release/protection/required_signatures",
+		"url": "https://api.github.com/repos/owner/my-branch/branches/release/protection/required_signatures",
 		"enabled": false
 	},
 	"enforce_admins": {
-		"url": "https://api.github.com/repos/ncino/force-integrations-plugin-lspus/branches/release/protection/enforce_admins",
+		"url": "https://api.github.com/repos/owner/my-branch/branches/release/protection/enforce_admins",
 		"enabled": false
 	},
 	"required_linear_history": {
