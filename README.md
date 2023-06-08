@@ -11,9 +11,9 @@ Output a table listing your teams repositories and if they are frozen.
 CLI Options:  
 -l (list repositories with frozen status)
 
-| Index | RepoName       | IsFrozen |
-| ----- | -------------- | -------- |
-| 0     | 'force-CSIDDP' | false    |
+| Index | RepoName  | IsFrozen |
+| ----- | --------- | -------- |
+| 0     | 'my-Repo' | false    |
 
 -f (freeze repository)  
 -t (thaw repository)  
